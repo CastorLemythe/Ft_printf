@@ -6,19 +6,22 @@
 /*   By: lufranco <lufranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/17 13:40:44 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/17 13:42:46 by lufranco         ###   ########.fr       */
+/*   Updated: 2018/08/17 14:43:29 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbrlen(size_t n)
+int		ft_nbrlen(int n)
 {
-	unsigned int	len;
+	int	len;
 
 	len = 0;
 	if (n <= 0)
+	{
+		n = -n;
 		len++;
+	}
 	while (n != 0)
 	{
 		n = n / 10;

@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lufranco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 13:03:03 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/17 14:42:59 by lufranco         ###   ########.fr       */
+/*   Created: 2018/08/08 15:13:57 by lufranco          #+#    #+#             */
+/*   Updated: 2018/08/17 14:00:53 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char			*ft_itoa(int n)
+int		main(void)
 {
-	char	*dest;
-	int		neg;
-	int		i;
+	int h = -421;
+	char *s = "bijour";
+	char c;
 
-	neg = 0;
-	i = ft_nbrlen(n);
-	dest = (char *)malloc(sizeof(*dest) * (i + 1));
-	if (dest == NULL)
-		return (NULL);
-	dest[i] = '\0';
-	i--;
-	if (n < 0)
-	{
-		dest[0] = '-';
-		neg = 1;
-		n = -n;
-		i--;
-	}
-	while (i >= 0)
-	{
-		dest[i + neg] = n % 10 + '0';
-		n = n / 10;
-		i--;
-	}
-	return (dest);
+	c = 'a';
+	ft_putnbr(ft_printf("variable = %d et %c et %s\n", h, 65, s));
+	write(1, "\n\n", 2);
+	ft_putnbr(printf("variable = %d et %C et %s\n", h, 65, s));
+	write(1, "\n", 1);
+//	while (1);
+	return (0);
 }
