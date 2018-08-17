@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lufranco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/10 15:43:00 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/13 16:30:08 by lufranco         ###   ########.fr       */
+/*   Created: 2017/11/08 11:28:05 by lufranco          #+#    #+#             */
+/*   Updated: 2017/11/11 15:11:44 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef "FT_PRINTF_H"
-# define "FT_PRINTF_H"
+#include "libft.h"
 
-typedef	struct	s_case
+void	ft_putstr(char const *s)
 {
-	int		opt;
-	int		fld;
-	int		acc;
-	int		mod;
-	int		conv;
-	int		i;
-	int		ret;
-	va_list	ap;
-}				t_case
+	int i;
 
-#endif
+	i = 0;
+	if (s)
+	{
+		while (s[i] != '\0')
+		{
+			ft_putchar(s[i]);
+			i++;
+		}
+	}
+}

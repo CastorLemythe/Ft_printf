@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lufranco <lufranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/13 13:24:49 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/13 16:30:03 by lufranco         ###   ########.fr       */
+/*   Created: 2018/08/17 13:40:44 by lufranco          #+#    #+#             */
+/*   Updated: 2018/08/17 13:42:46 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *str, ...)
+int		ft_nbrlen(size_t n)
 {
-	t_case	stk;
+	unsigned int	len;
 
-	
-	return (stk.ret);
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n != 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }
