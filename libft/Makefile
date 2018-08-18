@@ -6,13 +6,15 @@
 #    By: lufranco <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/17 12:32:19 by lufranco          #+#    #+#              #
-#    Updated: 2018/08/08 15:11:50 by lufranco         ###   ########.fr        #
+#    Updated: 2018/08/18 11:23:10 by lufranco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC = ft_memset.c	\
 	   ft_tab_del.c \
+	   ft_itoa_base.c \
+	   ft_nbrlen.c \
 	   get_next_line.c \
 	   ft_bzero.c	\
 	   ft_memcpy.c	\

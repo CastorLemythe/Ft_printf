@@ -6,9 +6,11 @@
 /*   By: lufranco <lufranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/18 10:48:16 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/18 11:21:54 by lufranco         ###   ########.fr       */
+/*   Updated: 2018/08/18 11:23:34 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	ft_putc(int c)
 {

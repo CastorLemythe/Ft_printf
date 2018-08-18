@@ -6,7 +6,7 @@
 /*   By: lufranco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:14:50 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/17 14:43:38 by lufranco         ###   ########.fr       */
+/*   Updated: 2018/08/18 11:23:18 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <limits.h>
 
+char	*ft_itoa_base(int value, int base);
 int		ft_nbrlen(int n);
 char	*ft_strnstr(const char *dest, const char *src, size_t len);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
