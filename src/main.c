@@ -6,7 +6,7 @@
 /*   By: lufranco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 15:13:57 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/18 12:36:40 by lufranco         ###   ########.fr       */
+/*   Updated: 2018/08/21 12:30:31 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(void)
 
 //	ft_putnbr(ft_printf("variable = %d\n", h));
 //	write(1, "\n\n", 2);
-	ft_putnbr(printf("variable = %d\n", h));
+	ft_putnbr(printf("variable = %+-d\n", h));
 	write(1, "\n", 1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lufranco <lufranco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:24:49 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/18 12:43:49 by lufranco         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:58:34 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@
 		free(stk.tmp);
 	}
 	if (str[stk.i] == '%')
-
 	{
 		write(1, &str[stk.i], 1);
 		stk.ret++;
@@ -52,10 +51,28 @@ void	init(t_case *stk)
 	stk.mod = 0;
 }
 
-void	ft_check_var(const char *s, t_case *stk, int i)
+int		ft_check_var(const char *s, t_case *stk, int i)
 {
 	init(stk);
-	if (s[i] == 45 || s[i] == 43 || s[i] == 35 || s[i] == 32)
+	if (s[i] == 45 || s[i] == 43 || s[i] == 35 || s[i] == 32 || s[i] == 48)
+		if (f_opt() == -1)
+			return (-1);
+	if (s[i] => '0' && s[i] =< '9')
+		if (f_fld() == -1)
+			return (-1);
+	if (s[i] == '.')
+		if (f_acc() == -1)
+			return (-1);
+	if (s[i] == 'h' || s[i] == 'l' || s[i] == 'j' || s[i] == 'z')
+		if (f_mod() == -1)
+			return (-1);
+	if (s[i] != '\0')
+		if (f_conv() == -1)
+			return (-1);
+	return (0);
+}
+
+/*	if (s[i] == 45 || s[i] == 43 || s[i] == 35 || s[i] == 32 || s[i] == 48)
 		stk->opt = s[i++];
 	if (s[i] => '0' && s[i] =< '9')
 	{
@@ -82,11 +99,11 @@ void	ft_check_var(const char *s, t_case *stk, int i)
 			i++;
 		i++;
 	}
-	stk->conv = s[i];
-}
+	stk->conv = s[i];*/
 
 int		ft_printf(const char *str, ...)
 {
+	//char tab[BUFF];
 	t_case	stk;
 
 	stk.i = -1;
@@ -96,12 +113,17 @@ int		ft_printf(const char *str, ...)
 	while (str[++stk.i] != '\0')
 	{
 		if (str[stk.i] == '%')
-			ft_check_var(str, &stk, stk.i + 1);
-		else
 		{
-			write(1, &str[stk.i], 1);
-			stk.ret++;
+			if (ft_check_var(str, &stk, stk.i + 1) == -1)
+			{
+				ft_putendl("No.");
+				return (0);
+			}
+			else
+				print_ftab();
 		}
+		else
+			print_ctab();
 	}
 	va_end(stk.ap);
 	return (stk.ret);

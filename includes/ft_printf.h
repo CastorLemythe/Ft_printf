@@ -6,7 +6,7 @@
 /*   By: lufranco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/10 15:43:00 by lufranco          #+#    #+#             */
-/*   Updated: 2018/08/18 10:34:11 by lufranco         ###   ########.fr       */
+/*   Updated: 2018/08/21 11:36:08 by lufranco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include "../libft/libft.h"
+# define BUFF 4096
 
 typedef	struct	s_case
 {
